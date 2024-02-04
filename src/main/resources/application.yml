@@ -1,0 +1,37 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/db_zuma
+    password: '1234'
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: 'true'
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: db_zuma_testing_user
+    url: jdbc:postgresql://dpg-cmuprvqcn0vc73akl6rg-a.oregon-postgres.render.com/db_zuma_testing
+    password: FKC3olCW9eNcTqmDReRcXSogJEfUGfdT
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
