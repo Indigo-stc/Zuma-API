@@ -26,6 +26,7 @@ public class Tournament {
     @Column(name = "tmt_name")
     private String name;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "tmt_startDate")
     private Date startDate;
 

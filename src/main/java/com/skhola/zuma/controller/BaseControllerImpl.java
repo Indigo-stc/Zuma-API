@@ -34,7 +34,7 @@ public abstract class BaseControllerImpl<T, ID extends Serializable> implements 
     @Override
     @PostMapping("")
     public ResponseEntity<?> save(@RequestBody T entity){
-        return ResponseEntity.status(HttpStatus.OK).body(baseService.save(entity));
+        return ResponseEntity.status(HttpStatus.CREATED).body(baseService.save(entity));
     }
 
     // to update a new record through its ID and the new values of in the entity
